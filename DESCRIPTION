@@ -7,7 +7,7 @@ Maintainer: Dunja Kurtoic <dunja_kurtoic@psych.mpg.de>
 Description: FARS is an R package for analysis of multiple accident-per-year data sets.
 License: GPL-3
 Encoding: UTF-8
-Depends: R (>= 3.3)
+Depends: R (>= 3.3), readr, tidyr
 Imports: dplyr, maps, graphics
 LazyData: true
 RoxygenNote: 6.0.1
