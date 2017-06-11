@@ -6,7 +6,7 @@
  #' @details filename you are giving to the function fars_read (or the path) must be
  #' correct and the file must exist. Otherwise the function returns error and stops.
  #'
- #' @param filename  file to be read
+ #' @param filename file to be read
  #'
  #' @return This function will return the loaded data in the form of a tibble.
  #'
@@ -102,7 +102,7 @@ fars_read_years <- function(years) {
 #' @details It uses function 'spread' from tidyr package to describe the data per year.  If you submit a non-existing year, the same errors as for fars_read_years function
 #' will appear.
 #'
-#' @inheritParams fars_read_years
+#' @param years numerical variable - can be a list
 #'
 #' @return a tibble where aach column represents the year you specified with the number of observations per
 #' specific month.
