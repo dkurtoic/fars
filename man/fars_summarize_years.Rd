@@ -26,7 +26,6 @@ will appear.
 }
 \examples{
 
-fars_summarize_years(list(2013,2014,2015))
 fars_summarize_years(list(2013))
 
 }

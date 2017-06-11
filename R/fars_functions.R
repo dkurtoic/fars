@@ -67,7 +67,6 @@ make_filename <- function(year) {
 #'
 #' @examples
 #'
-#' fars_read_years(list(2014,2015))
 #' fars_read_years(list(2013))
 #'
 #' @export
@@ -109,7 +108,6 @@ fars_read_years <- function(years) {
 #'
 #' @examples
 #'
-#' fars_summarize_years(list(2013,2014,2015))
 #' fars_summarize_years(list(2013))
 #'
 #' @export

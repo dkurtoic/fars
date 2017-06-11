@@ -21,7 +21,6 @@ because the file with the given year does not exist
 }
 \examples{
 
-fars_read_years(list(2014,2015))
 fars_read_years(list(2013))
 
 }
