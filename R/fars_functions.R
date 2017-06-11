@@ -18,7 +18,7 @@ system.file("extdata", "accident_2013.csv.bz2", package = "fars")
  #'
  #' @examples
  #'
- #' fars_read(var)
+ #' fars_read(system.file("extdata", "accident_2013.csv.bz2", package = "fars"))
  #'
  #' @export
 fars_read <- function(filename) {
@@ -99,10 +99,10 @@ fars_read_years <- function(years) {
 #'
 #' @importFrom tidyr spread
 #'
+#'@param years numerical variable - can be a list
+#'
 #' @details It uses function 'spread' from tidyr package to describe the data per year.  If you submit a non-existing year, the same errors as for fars_read_years function
 #' will appear.
-#'
-#' @param years numerical variable - can be a list
 #'
 #' @return a tibble where aach column represents the year you specified with the number of observations per
 #' specific month.
@@ -134,7 +134,6 @@ fars_summarize_years <- function(years) {
 #'
 #' @param state.num - the number of the state you want to inspect and plot. year - numeric. from which year you
 #' want to plot your data?
-#'
 #' @param year -  numerical variable
 #'
 #' @details this function uses 'filter' function from dplyr, 'map' function from maps and 'points'
@@ -148,14 +147,14 @@ fars_summarize_years <- function(years) {
 #'
 #' @examples
 #'
-#' fars_map_state(4, 2014)
-#' fars_map_state(6, 2014)
+#' fars_map_state(4, 2013)
+#' fars_map_state(6, 2013)
 #'
 #' @export
 fars_map_state <- function(state.num, year) {
   STATE=NULL
   filename <- make_filename(year)
-  data <- fars_read(filename)
+  data <- fars_read(system.file("extdata", "accident_2013.csv.bz2", package = "fars"))
   state.num <- as.integer(state.num)
 
   if(!(state.num %in% unique(data$STATE)))
