@@ -72,6 +72,8 @@ make_filename <- function(year) {
 #'
 #' @export
 fars_read_years <- function(years) {
+  MONTH=NULL
+  year=NULL
   lapply(years, function(year) {
     file <- make_filename(2014)
     tryCatch({
@@ -104,7 +106,6 @@ fars_read_years <- function(years) {
 #'
 #' @return a tibble where aach column represents the year you specified with the number of observations per
 #' specific month.
-#'
 #'
 #' @examples
 #'
@@ -153,6 +154,7 @@ fars_summarize_years <- function(years) {
 #'
 #' @export
 fars_map_state <- function(state.num, year) {
+  STATE=NULL
   filename <- make_filename(year)
   data <- fars_read(filename)
   state.num <- as.integer(state.num)
