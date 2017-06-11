@@ -7,7 +7,7 @@
 make_filename(year)
 }
 \arguments{
-\item{The}{only argument is the year (can be either in character or integer form, but it has to be a number. See examples below.)}
+\item{year}{- can be either in character or integer form, but it has to be a number. See examples below.}
 }
 \value{
 this function will return a string of your new filename with specified year

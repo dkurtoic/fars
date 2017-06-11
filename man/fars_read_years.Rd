@@ -7,7 +7,7 @@
 fars_read_years(years)
 }
 \arguments{
-\item{list}{containing only one year or many years}
+\item{years}{- variable containing only one year or many years (as list)}
 }
 \value{
 tibble(s) showing month and year variables only.

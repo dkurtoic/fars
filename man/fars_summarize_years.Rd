@@ -6,6 +6,9 @@
 \usage{
 fars_summarize_years(years)
 }
+\arguments{
+\item{years}{numerical variable - can be a list}
+}
 \value{
 a tibble where aach column represents the year you specified with the number of observations per
 specific month.
@@ -23,7 +26,7 @@ will appear.
 }
 \examples{
 
-fars_summarize_years(lost(2013,2014,2015))
-fars_summarize_years(lost(2013))
+fars_summarize_years(list(2013,2014,2015))
+fars_summarize_years(list(2013))
 
 }

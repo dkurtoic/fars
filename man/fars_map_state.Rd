@@ -9,6 +9,8 @@ fars_map_state(state.num, year)
 \arguments{
 \item{state.num}{- the number of the state you want to inspect and plot. year - numeric. from which year you
 want to plot your data?}
+
+\item{year}{-  numerical variable}
 }
 \value{
 the function will return a world map but with limited longitudes and latitutes shown
@@ -27,7 +29,7 @@ be printed. If there is no state with given state.num, the function will stop wi
 }
 \examples{
 
-fars_map_state(4, 2014)
-fars_map_state(6, 2014)
+fars_map_state(4, 2013)
+fars_map_state(6, 2013)
 
 }

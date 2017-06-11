@@ -7,7 +7,7 @@
 fars_read(filename)
 }
 \arguments{
-\item{csv.bz2}{or csv file which will be read}
+\item{filename}{file to be read}
 }
 \value{
 This function will return the loaded data in the form of a tibble.
@@ -22,8 +22,6 @@ correct and the file must exist. Otherwise the function returns error and stops.
 }
 \examples{
 
-fars_read("/accident_2013")
-fars_read("somefilethatdoesnotexist.csv")
-fars_read("~/Downloads/data-3/accident_2014.csv")
+fars_read(system.file("extdata", "accident_2013.csv.bz2", package = "fars"))
 
 }
