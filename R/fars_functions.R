@@ -1,3 +1,5 @@
+system.file("extdata", "accident_2013.csv.bz2", package = "fars")
+
  #' Function for reading your csv files.
  #'
  #' This function reads your csv file (can be in bz2 zipped format also). If the filename you want to open does not exist,
@@ -16,9 +18,7 @@
  #'
  #' @examples
  #'
- #' fars_read("/accident_2013")
- #' fars_read("somefilethatdoesnotexist.csv")
- #'
+ #' fars_read(var)
  #'
  #' @export
 fars_read <- function(filename) {
