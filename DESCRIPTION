@@ -3,7 +3,7 @@ Type: Package
 Title: Analysis of accidents in the USA per year
 Version: 0.1.0
 Author: Dunja Kurtoic
-Maintainer: Dunja Kurtoic dunja_kurtoic@psych.mpg.de
+Maintainer: Dunja Kurtoic <dunja_kurtoic@psych.mpg.de>
 Description: FARS is an R package for analysis of multiple accident-per-year data sets.
 License: GPL-3
 Encoding: UTF-8
