@@ -1,6 +1,3 @@
-getwd()
-setwd("~/Downloads/data-3/")
-
  #' Function for reading your csv files.
  #'
  #' This function reads your csv file (can be in bz2 zipped format also). If the filename you want to open does not exist,
