@@ -121,7 +121,6 @@ fars_summarize_years <- function(years) {
     tidyr::spread(year, n)
 }
 
-
 #' Plots the map of the USA and the places with accidents according to the state and year you give
 #'
 #' This function will read the file according to the year you give and according to the state number you give.
