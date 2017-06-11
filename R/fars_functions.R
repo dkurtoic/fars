@@ -6,7 +6,7 @@
  #' @details filename you are giving to the function fars_read (or the path) must be
  #' correct and the file must exist. Otherwise the function returns error and stops.
  #'
- #' @param csv.bz2  or csv file which will be read
+ #' @param filename  file to be read
  #'
  #' @return This function will return the loaded data in the form of a tibble.
  #'
@@ -18,7 +18,7 @@
  #'
  #' fars_read("/accident_2013")
  #' fars_read("somefilethatdoesnotexist.csv")
- #' fars_read("~/Downloads/data-3/accident_2014.csv")
+ #'
  #'
  #' @export
 fars_read <- function(filename) {
@@ -37,7 +37,7 @@ fars_read <- function(filename) {
 #'
 #' @details this function uses 'sprintf' function from base package.
 #'
-#' @param The only argument is the year (can be either in character or integer form, but it has to be a number. See examples below.)
+#' @param year - can be either in character or integer form, but it has to be a number. See examples below.
 #'
 #' @return this function will return a string of your new filename with specified year
 #'
@@ -58,7 +58,7 @@ make_filename <- function(year) {
 #'
 #' @import dplyr
 #'
-#' @param list containing only one year or many years
+#' @param years - variable containing only one year or many years (as list)
 #'
 #' @return tibble(s) showing month and year variables only.
 #'
@@ -108,8 +108,8 @@ fars_read_years <- function(years) {
 #'
 #' @examples
 #'
-#' fars_summarize_years(lost(2013,2014,2015))
-#' fars_summarize_years(lost(2013))
+#' fars_summarize_years(list(2013,2014,2015))
+#' fars_summarize_years(list(2013))
 #'
 #' @export
 fars_summarize_years <- function(years) {
@@ -134,6 +134,8 @@ fars_summarize_years <- function(years) {
 #'
 #' @param state.num - the number of the state you want to inspect and plot. year - numeric. from which year you
 #' want to plot your data?
+#'
+#' @param year -  numerical variable
 #'
 #' @details this function uses 'filter' function from dplyr, 'map' function from maps and 'points'
 #' function from graphics package. All LATITUDEs > 90 and LONGITUDEs >900 will not be
