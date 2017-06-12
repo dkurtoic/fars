@@ -25,7 +25,8 @@ It uses function 'spread' from tidyr package to describe the data per year.  If 
 will appear.
 }
 \examples{
-
+\dontrun{
 fars_summarize_years(list(2013))
+}
 
 }

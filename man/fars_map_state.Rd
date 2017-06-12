@@ -28,8 +28,9 @@ plotted. If your there is no data for the given state in the given year, an erro
 be printed. If there is no state with given state.num, the function will stop with an error printed.
 }
 \examples{
-
+\dontrun{
 fars_map_state(4, 2013)
 fars_map_state(6, 2013)
+}
 
 }

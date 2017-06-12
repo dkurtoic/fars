@@ -21,7 +21,8 @@ filename you are giving to the function fars_read (or the path) must be
 correct and the file must exist. Otherwise the function returns error and stops.
 }
 \examples{
-
+\dontrun{
 fars_read(system.file("extdata", "accident_2013.csv.bz2", package = "fars"))
+}
 
 }

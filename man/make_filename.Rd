@@ -20,8 +20,9 @@ accident_[wantedYear].csv.bz2.
 this function uses 'sprintf' function from base package.
 }
 \examples{
-
+\dontrun{
 make_filename(2015)
 make_filename("2017")
+}
 
 }

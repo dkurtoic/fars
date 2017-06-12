@@ -17,10 +17,10 @@ system.file("extdata", "accident_2013.csv.bz2", package = "fars")
  #' @importFrom readr read_csv
  #'
  #' @examples
- #'
  #'\dontrun{
  #' fars_read(system.file("extdata", "accident_2013.csv.bz2", package = "fars"))
  #'}
+ #'
  #' @export
 fars_read <- function(filename) {
   if(!file.exists(filename))
@@ -43,7 +43,6 @@ fars_read <- function(filename) {
 #' @return this function will return a string of your new filename with specified year
 #'
 #' @examples
-#'
 #'\dontrun{
 #' make_filename(2015)
 #' make_filename("2017")
@@ -73,6 +72,7 @@ make_filename <- function(year) {
 #' fars_read_years(2014)
 #' fars_read_years(2013)
 #' fars_read_years(c(2013,2014))
+#'}
 #'
 #' @export
 fars_read_years <- function(years) {

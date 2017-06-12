@@ -7,7 +7,7 @@
 fars_read_years(years)
 }
 \arguments{
-\item{years}{- variable containing only one year or many years (as list)}
+\item{years}{- variable containing only one year or many years}
 }
 \value{
 tibble(s) showing month and year variables only.
@@ -20,7 +20,10 @@ if there is no file which contains a year that you submitted, a warning will be 
 because the file with the given year does not exist
 }
 \examples{
-
-fars_read_years(list(2013))
+\dontrun{
+fars_read_years(2014)
+fars_read_years(2013)
+fars_read_years(c(2013,2014))
+}
 
 }
