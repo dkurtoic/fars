@@ -116,9 +116,11 @@ fars_read_years <- function(years) {
 #'
 #' @export
 fars_summarize_years <- function(years) {
+  MONTH=NULL
+  year=NULL
   dat_list <- fars_read_years(years)
-  dplyr::bind_rows(dat_list) %>%
-    dplyr::group_by_(~year, ~MONTH) %>%
+  dat_list2 <- dplyr::bind_rows(dat_list)
+    dat_list2 %>% dplyr::group_by_(~year, ~MONTH) %>%
     dplyr::summarize_(n = ~n()) %>%
     tidyr::spread_(key_col = "year", value_col = "n")
 }
