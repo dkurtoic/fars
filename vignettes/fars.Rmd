@@ -12,7 +12,7 @@ vignette: >
 This is a package for analysing U.S. National Highway Traffic Safety Administration's Fatality Analysis Reporting System (FARS) data. The built-in functions provide loading the data, summarizing it and plotting.
 
 ```{r}
-#library(fars)
+library(fars)
 ```
 
 ```{r, echo=F}
