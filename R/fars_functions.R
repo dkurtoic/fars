@@ -18,8 +18,9 @@ system.file("extdata", "accident_2013.csv.bz2", package = "fars")
  #'
  #' @examples
  #'
+ #'\dontrun{
  #' fars_read(system.file("extdata", "accident_2013.csv.bz2", package = "fars"))
- #'
+ #'}
  #' @export
 fars_read <- function(filename) {
   if(!file.exists(filename))
@@ -43,8 +44,10 @@ fars_read <- function(filename) {
 #'
 #' @examples
 #'
+#'\dontrun{
 #' make_filename(2015)
 #' make_filename("2017")
+#'}
 #'
 #' @export
 make_filename <- function(year) {
@@ -58,7 +61,7 @@ make_filename <- function(year) {
 #'
 #' @import dplyr
 #'
-#' @param years - variable containing only one year or many years (as list)
+#' @param years - variable containing only one year or many years
 #'
 #' @return tibble(s) showing month and year variables only.
 #'
@@ -66,8 +69,10 @@ make_filename <- function(year) {
 #' because the file with the given year does not exist
 #'
 #' @examples
-#'
-#' fars_read_years(list(2013))
+#'\dontrun{
+#' fars_read_years(2014)
+#' fars_read_years(2013)
+#' fars_read_years(c(2013,2014))
 #'
 #' @export
 fars_read_years <- function(years) {
@@ -107,8 +112,9 @@ fars_read_years <- function(years) {
 #' specific month.
 #'
 #' @examples
-#'
+#'\dontrun{
 #' fars_summarize_years(list(2013))
+#'}
 #'
 #' @export
 fars_summarize_years <- function(years) {
@@ -144,9 +150,10 @@ fars_summarize_years <- function(years) {
 #' a accident which happend in the corresponding year and corresponding state in the USA.
 #'
 #' @examples
-#'
+#'\dontrun{
 #' fars_map_state(4, 2013)
 #' fars_map_state(6, 2013)
+#'}
 #'
 #' @export
 fars_map_state <- function(state.num, year) {
