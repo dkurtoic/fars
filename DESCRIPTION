@@ -11,3 +11,6 @@ Depends: R (>= 3.3), readr, tidyr
 Imports: dplyr, maps, graphics
 LazyData: true
 RoxygenNote: 6.0.1
+Suggests: knitr,
+    rmarkdown
+VignetteBuilder: knitr
