@@ -118,6 +118,7 @@ fars_read_years <- function(years) {
 fars_summarize_years <- function(years) {
   MONTH=NULL
   year=NULL
+  if(getRversion() >= "2.15.1")  utils::globalVariables("MONTH")
   dat_list <- fars_read_years(years)
   dat_list2 <- dplyr::bind_rows(dat_list)
     dat_list2 %>% dplyr::group_by_(~year, ~MONTH) %>%
