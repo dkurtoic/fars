@@ -30,31 +30,6 @@ make_filename(2013)
 ```
  
  + fars_read_years() - reads files according to the years you submit.
-
-```{r,include=F}
-library("dplyr")
-library("readr")
-fars_summarize_years <- function(years) {
-  MONTH=NULL
-  year=NULL
-
-  if(getRversion() >= "2.15.1")  utils::globalVariables("MONTH")
-  #dat_list <- fars_read_years(years)
-  dat_list <- read_csv("~/Documents/coursera_MasteringSDinR/fars/inst/extdata/accident_2013.csv.bz2", progress = FALSE)
-  dat_list2 <- dplyr::bind_rows(dat_list)
-    dat_list2 %>% dplyr::group_by_(~YEAR, ~MONTH) %>%
-    dplyr::summarize_(n = ~n()) %>%
-    tidyr::spread_(key_col = "YEAR", value_col = "n")
-}
-```
  + fars_summarize_years() - summarizes data per year
- 
-```{r, include=F}
-var <- fars_summarize_years(2013)
-```
-`fars_summarize_years(2013)`
-```{r,echo=F}
-var
-```
  + fars_map_state() - plots a map of USA according to the state number you pass. Each dot represents a crime in given time.
 
