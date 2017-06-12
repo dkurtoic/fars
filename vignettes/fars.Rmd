@@ -1,6 +1,6 @@
 ---
 title: "FARS package vignette"
-author: "Dunja Kurotic"
+author: "Dunja Kurtoic"
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 vignette: >
@@ -9,17 +9,52 @@ vignette: >
   %\VignetteEncoding{UTF-8}
 ---
 
-This is a package analysing FARS data (U.S. National Highway Traffic Safety Administration's Fatality Analysis Reporting System (FARS)). The built-in functions provide loading the data, summarizing it and plotting.
+This is a package for analysing U.S. National Highway Traffic Safety Administration's Fatality Analysis Reporting System (FARS) data. The built-in functions provide loading the data, summarizing it and plotting.
 
-```{r,}
-library(fars)
+```{r}
+#library(fars)
 ```
 
-This package contains five functions:
-fars_read() - to load your data.
-make_filename() - to automatically create a file name, you just pass the year.
+```{r, echo=F}
+make_filename <- function(year) {
+  year <- as.integer(year)
+  sprintf("accident_%d.csv.bz2", year)
+}
+```
+
+* This package contains five functions:
+ + fars_read() - to load your data.
+ + make_filename() - to automatically create a file name, you just pass the year.
+```{r} 
 make_filename(2013)
-fars_read_years() - reads files according to the years you submit.
-fars_summarize_years() - summarizes data per year
-fars_map_state() - plots a map of USA according to the state number you pass. Each dot represents a crime in given time.
+```
+ 
+ + fars_read_years() - reads files according to the years you submit.
+
+```{r,include=F}
+library("dplyr")
+library("readr")
+fars_summarize_years <- function(years) {
+  MONTH=NULL
+  year=NULL
+
+  if(getRversion() >= "2.15.1")  utils::globalVariables("MONTH")
+  #dat_list <- fars_read_years(years)
+  dat_list <- read_csv("~/Documents/coursera_MasteringSDinR/fars/inst/extdata/accident_2013.csv.bz2", progress = FALSE)
+  dat_list2 <- dplyr::bind_rows(dat_list)
+    dat_list2 %>% dplyr::group_by_(~YEAR, ~MONTH) %>%
+    dplyr::summarize_(n = ~n()) %>%
+    tidyr::spread_(key_col = "YEAR", value_col = "n")
+}
+```
+ + fars_summarize_years() - summarizes data per year
+ 
+```{r, include=F}
+var <- fars_summarize_years(2013)
+```
+`fars_summarize_years(2013)`
+```{r,echo=F}
+var
+```
+ + fars_map_state() - plots a map of USA according to the state number you pass. Each dot represents a crime in given time.
 
